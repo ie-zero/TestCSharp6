@@ -1,17 +1,43 @@
-# Auto detect text files and perform LF normalization
+# All files: detect if file is text automatically
+
 * text=auto
 
-# Custom for Visual Studio
-*.cs     diff=csharp
+# Text files that should be normalized to LF
 
-# Standard to msysgit
-*.doc	 diff=astextplain
-*.DOC	 diff=astextplain
-*.docx diff=astextplain
-*.DOCX diff=astextplain
-*.dot  diff=astextplain
-*.DOT  diff=astextplain
-*.pdf  diff=astextplain
-*.PDF	 diff=astextplain
-*.rtf	 diff=astextplain
-*.RTF	 diff=astextplain
+*.cs text diff=csharp
+*.config text
+*.sln text
+*.csproj text
+*.md text
+*.sh text
+*.ps1 text
+*.cmd text
+*.bat text
+*.markdown text
+*.msbuild text
+
+# Binary files that should not be normalized or diffed
+
+*.exe binary
+*.dll binary
+*.pdb binary
+*.pfx binary
+*.snk binary
+
+*.png binary
+*.gif binary
+*.jpg binary
+*.bmp binary
+*.ico binary
+
+*.chm binary
+*.7z  binary
+*.zip binary
+
+tools/SHFB/**/* binary
+tools/Wix/**/* binary
+
+
+tools/SHFB export-ignore
+tools/Sandcastle export-ignore
+tools/Wix export-ignore
